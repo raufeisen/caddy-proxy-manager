@@ -2458,7 +2458,7 @@ export async function buildCaddyDocument() {
   ]);
 
   const { usage: certificateUsage, autoManagedDomains } = collectCertificateUsage(proxyHostRows, certificateMap);
-  const [generalSettings, dnsSettings, upstreamDnsResolutionSettings, globalGeoBlock, globalWaf, crowdSecSettings] = await Promise.all([
+  const [generalSettings, acmeSettings, dnsSettings, upstreamDnsResolutionSettings, globalGeoBlock, globalWaf, crowdSecSettings] = await Promise.all([
     getGeneralSettings(),
     getAcmeSettings(),
     getDnsSettings(),
